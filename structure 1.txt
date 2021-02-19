@@ -1,0 +1,40 @@
+//calculte net total marks by passing structure variable as function argument
+
+#include<iostream>
+
+using namespace std;
+struct student{
+    char name[100];
+    int w;
+    int x;
+    int y;
+};
+
+float get_tmarks(student);
+
+int main()
+{
+    student stu;
+    float t_marks;
+    cout<<"Enter the name of the student: ";
+    cin>>stu.name;
+    cout<<"Enter the roll: ";
+    cin>>stu.w;
+    cout<<"Enter the marks of bengali and english: ";
+    cin>>stu.x>>stu.y;
+    t_marks=get_tmarks(stu);
+    cout<<"\n*****Student details********\n";
+    cout<<"Student name: "<<stu.name<<endl;
+    cout<<"Student roll: "<<stu.w<<endl;
+    cout<<"Bengali marks: "<<stu.x<<endl;
+    cout<<"English marks: "<<stu.y<<endl;
+    cout<<"The total marks is: "<<t_marks<<endl;
+
+}
+
+float get_tmarks(student stu)
+{
+    float t_marks;
+    t_marks=(stu.x+stu.y)/2;
+    return t_marks;
+}
